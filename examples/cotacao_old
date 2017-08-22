@@ -1,0 +1,39 @@
+<?php 
+
+$url = "http://api.bitcoincharts.com/v1/markets.json";
+
+$curl = curl_init();
+curl_setopt_array($curl, array(
+    CURLOPT_RETURNTRANSFER => 1,
+    CURLOPT_URL => $url,
+    CURLOPT_USERAGENT => 'Mozilla/5.0 (Windows NT x.y; Win64; x64; rv:10.0) Gecko/20100101 Firefox/10.0',
+	CURLOPT_CONNECTTIMEOUT  => 0
+));
+$str = curl_exec($curl);
+curl_close($curl);
+
+$markets = json_decode($str);
+
+$marketsBlackList = ['bbmBRL'];
+
+printf("%s", PHP_EOL);
+printf("%s", str_pad("\t\tCOTACAO BRL", 30, " "), PHP_EOL);
+printf("%s", PHP_EOL);
+
+
+foreach ($markets as $market) {
+
+	if ($market->currency == "BRL" && !in_array($market->symbol, $marketsBlackList)) {
+
+		printf("%s", PHP_EOL);
+
+		printf("%s %s", str_pad("", 39, "-"), PHP_EOL);
+
+		foreach ($market as $property => $value) {
+			printf("| %s | %s | %s", str_pad($property, 16, " "), str_pad($value, 16, " "), PHP_EOL);
+			printf("%s %s", str_pad("", 39, "-"), PHP_EOL);
+		}
+
+	}
+
+}
