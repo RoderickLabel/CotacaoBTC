@@ -10,15 +10,14 @@ use Cotacao\CLIRender as CLIRender;
 use Cotacao\CurrencyCode as CurrencyCode;
  
 $pdo = (new SQLiteConnection())->connect();
+CLIRender::printMessage("Verificando banco de dados...");
 
 if ($pdo != null)
-    echo "Conexão com Banco de Dados SQLite executada com sucesso!\n";
+    CLIRender::printMessage("Conexão com Banco de Dados SQLite executada com sucesso!");
 else
-    echo "Whoops, não foi possível se conectar com Banco de Dados SQLite!\n";
+    CLIRender::printMessage("Whoops, não foi possível se conectar com Banco de Dados SQLite!");
 
 try {
-
-	CLIRender::printMessage("Verificando banco de dados...\n");
 
 	$db = new SQLiteCreateTable($pdo);
 	CLIRender::printMessage("Verificando Tabelas...");
@@ -27,28 +26,21 @@ try {
 	$tables = $db->getTableList();
 
 	CLIRender::printHeader(["Tabelas:"]);
-
 	foreach ($tables as $table) {
 		CLIRender::printLineData([$table]);
 	}
-
 	CLIRender::printBody();
 
-	CLIRender::printMessage("Obtendo dados...\n");
-	$allCurrencies = (new CurrencyCode())->getCodes()->CcyTbl->CcyNtry;
+	CLIRender::printMessage("Obtendo dados...");
+	$xml = simplexml_load_file("../data/iso4217.xml");
+	$allCurrencies = $xml->CcyTbl->CcyNtry;
 
-	CLIRender::printMessage("Inserindo dados...\n");
+	CLIRender::printMessage("Importando dados...");
 	$insert = new SQLiteInsert($pdo);
 	$insert->insertCurrencies($allCurrencies);
 
-	CLIRender::printMessage("Dados importados, aplicação instalada!\n");
+	CLIRender::printMessage("Dados importados, aplicação instalada!");
 	
-	$db = new SQLiteQuery($pdo);
-	$code = $db->getCurrencyByCurrencyCode(strtoupper('brl'));
-	$currencyCode = new CurrencyCode();
-	$result = $currencyCode->isNotValidCode($code);
-	var_dump($result);
-
 } catch (Exception $e) {
-	print $e->getMessage();
+	CLIRender::printMessage($e->getMessage());
 }

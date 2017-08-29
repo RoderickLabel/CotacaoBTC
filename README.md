@@ -1,13 +1,22 @@
 # CotacaoBTC
 Simples Client CLI para consulta de preços no mercado BTC
 
-## Utilização
+## Instalação
+
 
 Acesse a pasta
 
 ```sh
 $ cd CotacaoBTC/examples
 ```
+
+Rode o seguinte comando
+
+```sh
+$ php install.php
+```
+
+## Utilização
 
 Rode o php chamando o arquivo de cotacao de exemplo seguido do código iso da moeda:
 
