@@ -44,6 +44,7 @@ class Main {
 		CLIRender::printMessage($initMessage);
 		CLIRender::printLoad();
 		CLIRender::breakLine();
+		CLIRender::printLineSeparator(89);
 		CLIRender::printHeader($this->tHeader);
 	}
 

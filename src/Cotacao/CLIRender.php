@@ -29,8 +29,7 @@ class CLIRender {
 
 	public static function printHeader(array $titles)
 	{
-		ob_start();
-		self::printLineSeparator(89);
+		ob_start();		
 		$strOut = "| ";
 		foreach ($titles as $title) {
 			$strOut .= str_pad($title, 19, " ") . " | ";

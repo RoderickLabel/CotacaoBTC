@@ -9,6 +9,7 @@ use Cotacao\SQLiteQuery as SQLiteQuery;
 use Cotacao\CLIRender as CLIRender;
 use Cotacao\CurrencyCode as CurrencyCode;
  
+mkdir("../db");
 $pdo = (new SQLiteConnection())->connect();
 CLIRender::printMessage("Verificando banco de dados...");
 
@@ -25,10 +26,12 @@ try {
 	CLIRender::printMessage("Obtendo tabelas existentes...\n");
 	$tables = $db->getTableList();
 
-	CLIRender::printHeader(["Tabelas:"]);
+	CLIRender::printLineSeparator(23);
+	CLIRender::printHeader(["Tabelas"]);
 	foreach ($tables as $table) {
 		CLIRender::printLineData([$table]);
 	}
+	CLIRender::printLineSeparator(23);
 	CLIRender::printBody();
 
 	CLIRender::printMessage("Obtendo dados...");
