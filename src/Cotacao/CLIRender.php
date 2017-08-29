@@ -22,15 +22,15 @@ class CLIRender {
 		printf("%s", PHP_EOL);
 	}
 
-	public static function printLineSeparator()
+	public static function printLineSeparator($cols)
 	{
-		printf("%s %s", str_pad("", 89, "-"), PHP_EOL);
+		printf("%s %s", str_pad("", $cols, "-"), PHP_EOL);
 	}
 
 	public static function printHeader(array $titles)
 	{
 		ob_start();
-		self::printLineSeparator();
+		self::printLineSeparator(89);
 		$strOut = "| ";
 		foreach ($titles as $title) {
 			$strOut .= str_pad($title, 19, " ") . " | ";

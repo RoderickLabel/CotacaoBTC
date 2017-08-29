@@ -14,11 +14,10 @@ class CLIArgs {
 	public function setArgs($args)
 	{
 		foreach ($args as $arg) {
-        	$e = explode("=", $arg);
+        	$e = explode(" ", $arg);
 	        if(count($e) == 2) {
-
 	            $this->args[$e[0]] = $e[1];
-	        } else {	        	
+	        } else {
 	            $this->args = $e[0];
 	        }
 	    }

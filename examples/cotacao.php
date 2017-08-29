@@ -1,6 +1,6 @@
 <?php 
 
-require_once("../autoload.php");
+require_once("../vendor/autoload.php");
 error_reporting(E_ALL ^ E_NOTICE);
 
 use Cotacao\Main;
