@@ -5,12 +5,12 @@ namespace Cotacao;
 use Cotacao\Market;
 use Cotacao\MarketFactory;
 use Cotacao\ApiClient;
-use Cotacao\CLIRender;
-use Cotacao\CLIArgs;
 use Cotacao\FormatCurrency;
-use Cotacao\SQLiteConnection;
-use Cotacao\SQLiteQuery;
 use Cotacao\CurrencyCode;
+use Cotacao\CLI\CLIRender;
+use Cotacao\CLI\CLIArgs;
+use Cotacao\SQLite\SQLiteConnection;
+use Cotacao\SQLite\SQLiteQuery;
 
 class Main {
 

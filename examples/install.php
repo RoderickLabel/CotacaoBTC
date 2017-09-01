@@ -2,11 +2,11 @@
  
 require '../vendor/autoload.php';
  
-use Cotacao\SQLiteConnection as SQLiteConnection;
-use Cotacao\SQLiteCreateTable as SQLiteCreateTable;
-use Cotacao\SQLiteInsert as SQLiteInsert;
-use Cotacao\SQLiteQuery as SQLiteQuery;
-use Cotacao\CLIRender as CLIRender;
+use Cotacao\SQLite\SQLiteConnection as SQLiteConnection;
+use Cotacao\SQLite\SQLiteCreateTable as SQLiteCreateTable;
+use Cotacao\SQLite\SQLiteInsert as SQLiteInsert;
+use Cotacao\SQLite\SQLiteQuery as SQLiteQuery;
+use Cotacao\CLI\CLIRender as CLIRender;
 use Cotacao\CurrencyCode as CurrencyCode;
  
 if (!file_exists("../db")) mkdir("../db");
