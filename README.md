@@ -3,7 +3,7 @@ Simples Client CLI para consulta de preços em diversas exchanges de BTC nas sua
 
 ## Requerimentos
 
-* SqLite Driver
+* SQLite Driver
 * cURL
 
 Para instalação do SQLite e cURL no Ubuntu com PHP7:
