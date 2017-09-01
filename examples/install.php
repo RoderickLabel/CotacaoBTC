@@ -9,7 +9,8 @@ use Cotacao\SQLiteQuery as SQLiteQuery;
 use Cotacao\CLIRender as CLIRender;
 use Cotacao\CurrencyCode as CurrencyCode;
  
-mkdir("../db");
+if (!file_exists("../db")) mkdir("../db");
+
 $pdo = (new SQLiteConnection())->connect();
 CLIRender::printMessage("Verificando banco de dados...");
 
