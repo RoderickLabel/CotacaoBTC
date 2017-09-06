@@ -3,14 +3,15 @@
 const DS = DIRECTORY_SEPARATOR;
 require_once (dirname(dirname(__FILE__)) . DS . 'vendor' . DS . 'autoload.php');
  
-use Cotacao\SQLiteConnection as SQLiteConnection;
-use Cotacao\SQLiteCreateTable as SQLiteCreateTable;
-use Cotacao\SQLiteInsert as SQLiteInsert;
-use Cotacao\SQLiteQuery as SQLiteQuery;
-use Cotacao\CLIRender as CLIRender;
+use Cotacao\SQLite\SQLiteConnection as SQLiteConnection;
+use Cotacao\SQLite\SQLiteCreateTable as SQLiteCreateTable;
+use Cotacao\SQLite\SQLiteInsert as SQLiteInsert;
+use Cotacao\SQLite\SQLiteQuery as SQLiteQuery;
+use Cotacao\CLI\CLIRender as CLIRender;
 use Cotacao\CurrencyCode as CurrencyCode;
  
-mkdir("../db");
+if (!file_exists("../db")) mkdir("../db");
+
 $pdo = (new SQLiteConnection())->connect();
 CLIRender::printMessage("Verificando banco de dados...");
 

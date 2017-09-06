@@ -1,6 +1,6 @@
 <?php 
 
-namespace Cotacao;
+namespace Cotacao\CLI;
 
 class CLIRender {
 

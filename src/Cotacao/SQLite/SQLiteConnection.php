@@ -1,12 +1,14 @@
 <?php
 
-namespace Cotacao;
+namespace Cotacao\SQLite;
  
 use \PDO;
+
 /**
  * SQLite connnection
  */
 class SQLiteConnection {
+
     /**
      * PDO instance
      * @var type 

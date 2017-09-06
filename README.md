@@ -1,5 +1,17 @@
 # CotacaoBTC
-Simples Client CLI para consulta de preços no mercado BTC
+Simples Client CLI para consulta de preços em diversas exchanges de BTC nas suas respectivas moedas
+
+## Requerimentos
+
+* SQLite Driver
+* cURL
+
+Para instalação do SQLite e cURL no Ubuntu com PHP7:
+
+```
+$ sudo apt-get install php7.0-sqlite3
+$ sudo apt-get install php7.0-curl
+```
 
 ## Instalação
 
@@ -41,3 +53,5 @@ Para verificar cotações da maior parte das exchanges espalhadas pelo mundo
 ```sh
 $ php cotacao.php
 ```
+
+

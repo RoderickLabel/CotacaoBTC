@@ -2,8 +2,8 @@
 
 require_once("../vendor/autoload.php");
 
-use Cotacao\SQLiteConnection as SQLiteConnection;
-use Cotacao\SQLiteQuery as SQLiteQuery;
+use Cotacao\SQLite\SQLiteConnection as SQLiteConnection;
+use Cotacao\SQLite\SQLiteQuery as SQLiteQuery;
 use Cotacao\CurrencyCode as CurrencyCode;
 
 $pdo = (new SQLiteConnection())->connect();

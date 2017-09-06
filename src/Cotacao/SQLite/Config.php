@@ -1,6 +1,6 @@
 <?php
  
-namespace Cotacao;
+namespace Cotacao\SQLite;
  
 class Config {
    /**
