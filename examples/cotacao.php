@@ -1,7 +1,7 @@
 <?php 
 
-const DS = DIRECTORY_SEPARATOR;
-require_once (dirname(dirname(__FILE__)) . DS . 'vendor' . DS . 'autoload.php');
+require_once ('../vendor/autoload.php');
+
 error_reporting(E_ALL ^ E_NOTICE);
 
 use Cotacao\Main;

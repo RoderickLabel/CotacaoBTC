@@ -1,7 +1,6 @@
 <?php
  
-const DS = DIRECTORY_SEPARATOR;
-require_once (dirname(dirname(__FILE__)) . DS . 'vendor' . DS . 'autoload.php');
+require_once ('../vendor/autoload.php');
  
 use Cotacao\SQLite\SQLiteConnection as SQLiteConnection;
 use Cotacao\SQLite\SQLiteCreateTable as SQLiteCreateTable;
