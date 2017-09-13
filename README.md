@@ -15,11 +15,21 @@ $ sudo apt-get install php7.0-curl
 
 ## Instalação
 
+Entre na pasta do projeto
 
-Acesse a pasta
+```
+$ cd CotacaoBTC 
+```
+Baixe os componentes via composer
+
+```
+$ composer update
+```
+
+Acesse a pasta examples
 
 ```sh
-$ cd CotacaoBTC/examples
+$ cd examples
 ```
 
 Rode o seguinte comando
